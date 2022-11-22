@@ -18,7 +18,7 @@ pipeline {
         }       
       stage('Docker Build and Tag') {
            steps {
-                dir('python-application') {
+                dir('PythonApp') {
                 sh 'whoami'
                 sh 'docker build -t my-python-app:latest .'               
                 }
@@ -44,7 +44,7 @@ pipeline {
 
       stage ('Docker compose for monitoring') {
         steps {
-                dir ('python-application') {
+                dir ('PythonApp') {
                 sh "docker-compose build"
                 sh "docker-compose up -d"
                 }  
