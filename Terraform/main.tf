@@ -19,7 +19,7 @@ resource "aws_instance" "vm-web" {
   security_groups = ["${aws_security_group.ingress-all-test.id}"]
  
   user_data = <<EOF
-#! /bin/bash
+#!/bin/bash
 sudo yum update -y
 sudo yum install wget
 sudo amazon-linux-extras install java-openjdk11
